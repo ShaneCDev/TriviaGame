@@ -47,6 +47,66 @@ a {
     border-radius: 1.5rem;
 }
 
+.htpBtn {
+    box-shadow: inset 0px 1px 3px 0px #91b8b3;
+    background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+    background-color: #768d87;
+    border-radius: 15px;
+    border: 2px solid #566963;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: var(--content-text);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 42px;
+    text-decoration: none;
+}
+
+.htpBtn:hover {
+    background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+    background-color: #6c7c7c;
+}
+
+.htpBtn:active {
+    position: relative;
+    top: 1px;
+}
+
+.centerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* category buttons */
+.category-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 75px;
+    padding: 5px;
+}
+
+.flexBtn {
+    margin: 0 5px;
+    text-align: center;
+    box-shadow: inset 0px 1px 3px 0px #91b8b3;
+    background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+    background-color: #768d87;
+    border-radius: 15px;
+    border: 2px solid #566963;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: var(--content-text);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 42px;
+    text-decoration: none;
+}
+
+
 .modal {
     display: flex;
     align-items: center;
@@ -77,6 +137,8 @@ a {
     max-width: 100%;
     text-align: center;
 }
+
+
 
 .modal h2 {
     margin: 0;
