@@ -30,6 +30,11 @@ h1 {
     text-shadow: 3px 3px 3px var(--third-colour);
 }
 
+h2 {
+    font-family: var(--content-text);
+    text-align: center;
+}
+
 a {
     text-decoration: none;
 }
@@ -37,7 +42,7 @@ a {
 p {
     text-align: center;
     font-size: 0.75rem;
-    padding-bottom: .75rem;
+    padding-top: .75rem;
 }
 
 .flex {
@@ -204,6 +209,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .ans-btns {
