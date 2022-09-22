@@ -14,14 +14,19 @@ const mediumTVQuiz = "https://opentdb.com/api.php?amount=10&category=14&difficul
 const mediumGamesQuiz = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple";
 const mediumSportsQuiz = "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple";
 
+window.onload = getMovieTrivia();
+
 //API call function
 async function getMovieTrivia() {
     let movieResponse = await fetch(mediumMovieQuiz);
     let movieData =  await movieResponse.json();
-    console.log(movieData);
+    const results = movieData.results[0];
+    const answers = [...results.incorrect_answers, results.correct_answer];
+    console.log(answers);
 
     getMovieQuestion(movieData);
     populateMovieBtnAnswers(movieData);
+
 }
 async function getTVTrivia() {
     let showsResponse = await fetch(mediumTVQuiz);
@@ -64,10 +69,21 @@ function populateMovieBtnAnswers(movieData) {
         document.getElementById(`ans${index}`).value = answers[i];
     }
 
-    let userAnswer = document.getElementById('button').onclick = function() {
-        alert("button clicked");
-    }
 }   
+
+function checkAnswer(movieData) {
+    const results = movieData.results[0];
+
+    console.log(results);
+    let userAnswer = document.getElementById('ans1');
+
+    if(userAnswer.click == true){
+        alert('I clicked!');
+        
+    }
+
+}
+
 
 //will get around to using this later on
 function fisherYatesShuffle(array) {
