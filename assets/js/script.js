@@ -1,12 +1,10 @@
-const modal = document.getElementById('myModal');
-const openBtn = document.getElementById('openModal');
-const closeBtn = document.getElementById('closeModal');
 
 //Category Buttons
 const movieBtn = document.getElementById('movieBtn');
 const showsBtn = document.getElementById('showsBtn');
 const gameBtn = document.getElementById('gamesBtn');
 const sportsBtn = document.getElementById('sportsBtn');
+
 
 //API
 const mediumMovieQuiz = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple";
@@ -18,15 +16,11 @@ window.onload = getMovieTrivia();
 
 //API call function
 async function getMovieTrivia() {
-    let movieResponse = await fetch(mediumMovieQuiz);
-    let movieData =  await movieResponse.json();
-    const results = movieData.results[0];
-    const answers = [...results.incorrect_answers, results.correct_answer];
-    console.log(answers);
+    const movieResponse = await fetch(mediumMovieQuiz);
+    const movieData =  await movieResponse.json();
 
     getMovieQuestion(movieData);
     populateMovieBtnAnswers(movieData);
-
 }
 async function getTVTrivia() {
     let showsResponse = await fetch(mediumTVQuiz);
@@ -50,7 +44,6 @@ async function getSportsTrivia() {
 function getMovieQuestion(movieData) {
     let question = document.getElementById('question');
     question.innerHTML = movieData.results[0].question;
-    //console.log("I worked");
 }
 
 //populates the answers buttons with no issue, hardcoded so that correct answer is always on the
@@ -58,28 +51,23 @@ function getMovieQuestion(movieData) {
 function populateMovieBtnAnswers(movieData) {
     const results = movieData.results[0];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
-    //console.log(answers);
     
     fisherYatesShuffle(answers);
-    //console.log(answers);
-
+    
     for(let i = 0; i <= 4; i++) {
         let index = i + 1
         document.getElementById(`ans${index}`).innerHTML = answers[i];
         document.getElementById(`ans${index}`).value = answers[i];
     }
-
 }   
 
 function checkAnswer(movieData) {
-    const results = movieData.results[0];
+    
+    console.log(movieData)
 
-    console.log(results);
-    let userAnswer = document.getElementById('ans1');
-
-    if(userAnswer.click == true){
-        alert('I clicked!');
-        
+    for(let i = 0; i < 10; i++) {
+        let results = movieData.results[i];
+        console.log(results);
     }
 
 }
