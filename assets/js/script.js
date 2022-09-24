@@ -4,6 +4,8 @@ const showsBtn = document.getElementById('showsBtn');
 const gameBtn = document.getElementById('gamesBtn');
 const sportsBtn = document.getElementById('sportsBtn');
 
+//Answer Buttons
+const ansBtns = document.getElementsByClassName('flexAnsBtn');
 
 //API
 const mediumMovieQuiz = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple";
@@ -11,16 +13,19 @@ const mediumTVQuiz = "https://opentdb.com/api.php?amount=10&category=14&difficul
 const mediumGamesQuiz = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple";
 const mediumSportsQuiz = "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple";
 
+let movieData;
+
 window.onload = getMovieTrivia();
 
 //API call function
 async function getMovieTrivia() {
     const movieResponse = await fetch(mediumMovieQuiz);
-    const movieData =  await movieResponse.json();
+    movieData = await movieResponse.json();
 
     getMovieQuestion(movieData);
     populateMovieBtnAnswers(movieData);
 }
+
 async function getTVTrivia() {
     let showsResponse = await fetch(mediumTVQuiz);
     let showsData = await showsResponse.json();
@@ -47,7 +52,6 @@ function getMovieQuestion(movieData) {
 
 //populates the answers buttons with no issue
 function populateMovieBtnAnswers(movieData) {
-    console.log(movieData);
     const results = movieData.results[0];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
     
@@ -62,16 +66,26 @@ function populateMovieBtnAnswers(movieData) {
     }
 }   
 
-function checkAnswer(movieData) {
-    
-    console.log(movieData)
-
-    for(let i = 0; i < 10; i++) {
-        let results = movieData.results[i];
-        console.log(results);
-    }
-
+// loop through answer buttons and assign event listener to each of them which then calls the checkAnswer function
+for(let i = 0; i < ansBtns.length; i++) {
+    ansBtns[i].addEventListener('click', function (e) {   
+        checkAnswer(e.target);
+    });
 }
+
+function checkAnswer(btn) {
+    console.log(movieData);
+    let correctAns = movieData.results[0].correct_answer;
+    let userAnswer = btn.value;
+    console.log(userAnswer);
+    console.log(correctAns);
+    console.log(btn);
+    if(userAnswer === correctAns) {
+        btn.classList.add('right-ans');
+    }
+}
+
+
 
 function fisherYatesShuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
