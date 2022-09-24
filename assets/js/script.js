@@ -78,18 +78,16 @@ for(let i = 0; i < ansBtns.length; i++) {
 }
 
 function checkAnswer(btn) {
-    console.log(movieData);
     let correctAns = movieData.results[0].correct_answer;
     let userAnswer = btn.value;
-    console.log(userAnswer);
-    console.log(correctAns);
-    console.log(btn);
+    
     if(userAnswer === correctAns) {
         btn.classList.add('right-ans');
         incrementScore();
     } else {
         btn.classList.add('wrong-ans');
     }
+    
     acceptingAns = false;
 }
 
