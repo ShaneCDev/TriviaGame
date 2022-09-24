@@ -1,4 +1,3 @@
-
 //Category Buttons
 const movieBtn = document.getElementById('movieBtn');
 const showsBtn = document.getElementById('showsBtn');
@@ -46,15 +45,17 @@ function getMovieQuestion(movieData) {
     question.innerHTML = movieData.results[0].question;
 }
 
-//populates the answers buttons with no issue, hardcoded so that correct answer is always on the
-//first button at the moment, need to change that
+//populates the answers buttons with no issue
 function populateMovieBtnAnswers(movieData) {
+    console.log(movieData);
     const results = movieData.results[0];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
     
+    console.log(results.correct_answer);
+
     fisherYatesShuffle(answers);
     
-    for(let i = 0; i <= 4; i++) {
+    for(let i = 0; i <= 3; i++) {
         let index = i + 1
         document.getElementById(`ans${index}`).innerHTML = answers[i];
         document.getElementById(`ans${index}`).value = answers[i];
@@ -72,8 +73,6 @@ function checkAnswer(movieData) {
 
 }
 
-
-//will get around to using this later on
 function fisherYatesShuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
