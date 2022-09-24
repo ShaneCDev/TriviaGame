@@ -271,11 +271,11 @@ a {
 }
 
 .right-ans {
-    border: green 0.75rem solid;
+    border: green 0.5rem solid;
 }
 
 .wrong-ans {
-    border: red 0.75rem solid;
+    border: red 0.5rem solid;
 }
 
 .right {

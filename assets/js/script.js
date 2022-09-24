@@ -6,6 +6,8 @@ const sportsBtn = document.getElementById('sportsBtn');
 
 //Answer Buttons
 const ansBtns = document.getElementsByClassName('flexAnsBtn');
+let acceptingAns = true;
+let score = 0;
 
 //API
 const mediumMovieQuiz = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple";
@@ -68,8 +70,10 @@ function populateMovieBtnAnswers(movieData) {
 
 // loop through answer buttons and assign event listener to each of them which then calls the checkAnswer function
 for(let i = 0; i < ansBtns.length; i++) {
-    ansBtns[i].addEventListener('click', function (e) {   
-        checkAnswer(e.target);
+    ansBtns[i].addEventListener('click', function (e) {
+        if(acceptingAns){
+            checkAnswer(e.target);
+        } 
     });
 }
 
@@ -82,10 +86,17 @@ function checkAnswer(btn) {
     console.log(btn);
     if(userAnswer === correctAns) {
         btn.classList.add('right-ans');
+        incrementScore();
+    } else {
+        btn.classList.add('wrong-ans');
     }
+    acceptingAns = false;
 }
 
-
+function incrementScore() {
+    let scoreCounter = document.getElementById('score');
+    scoreCounter.innerHTML = ++score;
+}
 
 function fisherYatesShuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
