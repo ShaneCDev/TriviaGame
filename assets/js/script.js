@@ -94,7 +94,7 @@ function checkAnswer(btn) {
     } else {
         btn.classList.add('wrong-ans');
     }
-
+    
     acceptingAns = false;
 }
 
