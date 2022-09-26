@@ -8,6 +8,8 @@ const sportsBtn = document.getElementById('sportsBtn');
 const ansBtns = document.getElementsByClassName('flexAnsBtn');
 let acceptingAns = true;
 let score = 0;
+let questionNumber = 0;
+const nextQuestion = document.getElementById('next-question');
 
 //API
 const mediumMovieQuiz = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple";
@@ -54,40 +56,47 @@ function getMovieQuestion(movieData) {
 
 //populates the answers buttons with no issue
 function populateMovieBtnAnswers(movieData) {
-    const results = movieData.results[0];
+    const results = movieData.results[questionNumber];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
-    
+
     console.log(results.correct_answer);
 
     fisherYatesShuffle(answers);
-    
-    for(let i = 0; i <= 3; i++) {
+
+    for (let i = 0; i <= 3; i++) {
         let index = i + 1
         document.getElementById(`ans${index}`).innerHTML = answers[i];
         document.getElementById(`ans${index}`).value = answers[i];
     }
-}   
+    questionNumber++;
+}
 
 // loop through answer buttons and assign event listener to each of them which then calls the checkAnswer function
-for(let i = 0; i < ansBtns.length; i++) {
+for (let i = 0; i < ansBtns.length; i++) {
     ansBtns[i].addEventListener('click', function (e) {
-        if(acceptingAns){
+        if (acceptingAns) {
             checkAnswer(e.target);
-        } 
+        }
     });
+}
+
+nextQuestion.addEventListener('click', nextQuestion());
+
+function nextQuestion() {
+
 }
 
 function checkAnswer(btn) {
     let correctAns = movieData.results[0].correct_answer;
     let userAnswer = btn.value;
-    
-    if(userAnswer === correctAns) {
+
+    if (userAnswer === correctAns) {
         btn.classList.add('right-ans');
         incrementScore();
     } else {
         btn.classList.add('wrong-ans');
     }
-    
+
     acceptingAns = false;
 }
 
@@ -102,4 +111,3 @@ function fisherYatesShuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-
