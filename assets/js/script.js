@@ -80,7 +80,14 @@ function getNextQuestion() {
     question.innerHTML = questionArray;
     questionNumber++;
 
-    console.log(movieBtn);
+    let rightAns = document.querySelectorAll('.flexAnsBtn.right-ans');
+    let wrongAns = document.querySelectorAll('.flexAnsBtn.wrong-ans');
+
+    
+
+    rightAns[0].classList.remove('right-ans');
+    wrongAns[0].classList.remove('wrong-ans');
+
     //populateMovieBtnAnswers(movieData);
 }
 
@@ -94,7 +101,7 @@ function checkAnswer(btn) {
     } else {
         btn.classList.add('wrong-ans');
     }
-    
+
     acceptingAns = false;
 }
 
