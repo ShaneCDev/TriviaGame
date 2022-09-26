@@ -9,7 +9,9 @@ const ansBtns = document.getElementsByClassName('flexAnsBtn');
 let acceptingAns = true;
 let score = 0;
 let questionNumber = 0;
+let questionCounter = 1;
 const nextQuestion = document.getElementById('next-question');
+const question = document.getElementById('question');
 
 //API
 const mediumMovieQuiz = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple";
@@ -50,7 +52,6 @@ async function getSportsTrivia() {
 
 //gets the movie question and displays it with no issue at all just need to style the H2 element so it looks better
 function getMovieQuestion(movieData) {
-    let question = document.getElementById('question');
     question.innerHTML = movieData.results[0].question;
 }
 
@@ -71,19 +72,16 @@ function populateMovieBtnAnswers(movieData) {
     questionNumber++;
 }
 
-// loop through answer buttons and assign event listener to each of them which then calls the checkAnswer function
-for (let i = 0; i < ansBtns.length; i++) {
-    ansBtns[i].addEventListener('click', function (e) {
-        if (acceptingAns) {
-            checkAnswer(e.target);
-        }
-    });
-}
+function getNextQuestion() {
+    let questionCount = document.getElementById('question-num');
+    questionCount.innerHTML = ++questionCounter;
 
-nextQuestion.addEventListener('click', nextQuestion());
+    let questionArray = movieData.results[questionNumber].question;
+    question.innerHTML = questionArray;
+    questionNumber++;
 
-function nextQuestion() {
-
+    console.log(movieBtn);
+    //populateMovieBtnAnswers(movieData);
 }
 
 function checkAnswer(btn) {
@@ -111,3 +109,14 @@ function fisherYatesShuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+// loop through answer buttons and assign event listener to each of them which then calls the checkAnswer function
+for (let i = 0; i < ansBtns.length; i++) {
+    ansBtns[i].addEventListener('click', function (e) {
+        if (acceptingAns) {
+            checkAnswer(e.target);
+        }
+    });
+}
+
+nextQuestion.addEventListener('click', getNextQuestion);
