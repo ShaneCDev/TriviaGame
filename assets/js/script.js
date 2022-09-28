@@ -52,7 +52,8 @@ async function getSportsTrivia() {
 
 //gets the movie question and displays it with no issue at all just need to style the H2 element so it looks better
 function getMovieQuestion(movieData) {
-    question.innerHTML = movieData.results[0].question;
+    question.innerHTML = movieData.results[currentQuestionIndex].question;
+    //currentQuestionIndex++;
 }
 
 //populates the answers buttons with no issue
@@ -69,7 +70,6 @@ function populateMovieBtnAnswers(movieData) {
         document.getElementById(`ans${index}`).innerHTML = answers[i];
         document.getElementById(`ans${index}`).value = answers[i];
     }
-    currentQuestionIndex++;
 }
 
 function getNextQuestion() {
@@ -80,10 +80,32 @@ function getNextQuestion() {
     question.innerHTML = questionArray;
     currentQuestionIndex++;*/
 
-    clearStatusClass(ansBtns);
-    console.log(movieData);
+    acceptingAns = true;
+    const results = movieData.results[currentQuestionIndex];
+    const answers = [...results.incorrect_answers, results.correct_answer];
+
+    console.log(results.correct_answer);
 
     
+    clearStatusClass(ansBtns);
+    console.log(movieData.results[currentQuestionIndex]);
+    /*let questionCounter = document.getElementById('question-num');
+    questionCounter.innerHTML = ++questionCounter;
+    
+    let questionArray = movieData.results[currentQuestionIndex].question;
+    question.innerHTML = questionArray;
+    
+    fisherYatesShuffle(answers);
+
+    for(let i = 0; i <= 3; i++) {
+        let index = i + 1;
+        document.getElementById(`ans${index}`).innerHTML = answers[i];
+        document.getElementById(`ans${index}`).value = answers[i];
+        console.log(document.getElementById(`ans${index}`).innerHTML = answers[i]);
+        console.log(document.getElementById(`ans${index}`).value = answers[i]);
+    }
+    currentQuestionIndex++;
+    console.log(currentQuestionIndex);*/
 }
 
 function clearStatusClass(element) {
@@ -95,7 +117,7 @@ function clearStatusClass(element) {
 }
 
 function checkAnswer(btn) {
-    let correctAns = movieData.results[0].correct_answer;
+    let correctAns = movieData.results[currentQuestionIndex].correct_answer;
     let userAnswer = btn.value;
 
     if (userAnswer === correctAns) {
