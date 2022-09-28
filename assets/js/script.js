@@ -73,27 +73,25 @@ function populateMovieBtnAnswers(movieData) {
 }
 
 function getNextQuestion() {
-    let questionCount = document.getElementById('question-num');
+    /*let questionCount = document.getElementById('question-num');
     questionCount.innerHTML = ++questionCounter;
 
     let questionArray = movieData.results[currentQuestionIndex].question;
     question.innerHTML = questionArray;
-    currentQuestionIndex++;
+    currentQuestionIndex++;*/
 
-    let rightAns = document.querySelectorAll('.flexAnsBtn.right-ans');
-    let wrongAns = document.querySelectorAll('.flexAnsBtn.wrong-ans');
+    clearStatusClass(ansBtns);
+    console.log(movieData);
 
     
-
-    rightAns[0].classList.remove('right-ans');
-    wrongAns[0].classList.remove('wrong-ans');
-
-    //populateMovieBtnAnswers(movieData);
 }
 
 function clearStatusClass(element) {
-    element.classList.remove('right-ans');
-    element.classList.remove('wrong-ans');
+    console.log(element);
+    Array.from(element).forEach(button => {
+        button.classList.remove('right-ans');
+        button.classList.remove('wrong-ans');
+    });
 }
 
 function checkAnswer(btn) {
