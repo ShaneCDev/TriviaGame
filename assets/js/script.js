@@ -8,7 +8,7 @@ const sportsBtn = document.getElementById('sportsBtn');
 const ansBtns = document.getElementsByClassName('flexAnsBtn');
 let acceptingAns = true;
 let score = 0;
-let questionNumber = 0;
+let currentQuestionIndex = 0;
 let questionCounter = 1;
 const nextQuestion = document.getElementById('next-question');
 const question = document.getElementById('question');
@@ -57,7 +57,7 @@ function getMovieQuestion(movieData) {
 
 //populates the answers buttons with no issue
 function populateMovieBtnAnswers(movieData) {
-    const results = movieData.results[questionNumber];
+    const results = movieData.results[currentQuestionIndex];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
 
     console.log(results.correct_answer);
@@ -69,16 +69,16 @@ function populateMovieBtnAnswers(movieData) {
         document.getElementById(`ans${index}`).innerHTML = answers[i];
         document.getElementById(`ans${index}`).value = answers[i];
     }
-    questionNumber++;
+    currentQuestionIndex++;
 }
 
 function getNextQuestion() {
     let questionCount = document.getElementById('question-num');
     questionCount.innerHTML = ++questionCounter;
 
-    let questionArray = movieData.results[questionNumber].question;
+    let questionArray = movieData.results[currentQuestionIndex].question;
     question.innerHTML = questionArray;
-    questionNumber++;
+    currentQuestionIndex++;
 
     let rightAns = document.querySelectorAll('.flexAnsBtn.right-ans');
     let wrongAns = document.querySelectorAll('.flexAnsBtn.wrong-ans');
@@ -89,6 +89,11 @@ function getNextQuestion() {
     wrongAns[0].classList.remove('wrong-ans');
 
     //populateMovieBtnAnswers(movieData);
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('right-ans');
+    element.classList.remove('wrong-ans');
 }
 
 function checkAnswer(btn) {
