@@ -45,13 +45,17 @@ async function getTVTrivia() {
 async function getGamesTrivia() {
     let gamesResponse = await fetch(mediumGamesQuiz);
     gamesData = await gamesResponse.json();
-    
+
+    getGamesQuestion(gamesData);
+    populateGamesBtnAnswers(gamesData);
 }
 
 async function getSportsTrivia() {
     let sportsResponse = await fetch(mediumSportsQuiz);
     sportsData = await sportsResponse.json();
 
+    getSportsQuestion(sportsData);
+    populateSportsBtnAnswers(sportsData);
 }
 
 //gets the movie question and displays it with no issue at all just need to style the H2 element so it looks better
@@ -104,6 +108,20 @@ function populateSportsBtnAnswers(sportsData) {
     }
 }
 
+function populateGamesBtnAnswers(gamesData) {
+    const results = gamesData.results[currentQuestionIndex];
+    const answers = [...results.incorrect_answers, results.correct_answer];
+
+    console.log(results.correct_answer);
+
+    fisherYatesShuffle(answers);
+
+    for (let i = 0; i <= 3; i++) {
+        let index = i + 1;
+        document.getElementById(`ans${index}`).innerHTML = answers[i];
+        document.getElementById(`ans${index}`).value = answers[i];
+    }
+}
 
 function getNextQuestion() {
     currentQuestionIndex++;
