@@ -20,8 +20,12 @@ const mediumGamesQuiz = "https://opentdb.com/api.php?amount=10&category=15&diffi
 const mediumSportsQuiz = "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple";
 
 let movieData;
+let sportsData;
+let gamesData;
+let showsData;
 
-window.onload = getMovieTrivia();
+
+window.onload = getMovieTrivia(), getTVTrivia(), getSportsTrivia(), getGamesTrivia();
 
 //API call function
 async function getMovieTrivia() {
@@ -34,34 +38,47 @@ async function getMovieTrivia() {
 
 async function getTVTrivia() {
     let showsResponse = await fetch(mediumTVQuiz);
-    let showsData = await showsResponse.json();
-    //console.log(showsData);
+    showsData = await showsResponse.json();
+    
 }
 
 async function getGamesTrivia() {
     let gamesResponse = await fetch(mediumGamesQuiz);
-    let gamesData = await gamesResponse.json();
-    //console.log(gamesData);
+    gamesData = await gamesResponse.json();
+    
 }
 
 async function getSportsTrivia() {
     let sportsResponse = await fetch(mediumSportsQuiz);
-    let sportsData = await sportsResponse.json();
-    //console.log(sportsData);
+    sportsData = await sportsResponse.json();
+
 }
 
 //gets the movie question and displays it with no issue at all just need to style the H2 element so it looks better
 function getMovieQuestion(movieData) {
     question.innerHTML = movieData.results[currentQuestionIndex].question;
-    //currentQuestionIndex++;
+}
+
+function getSportsQuestion(sportsData) {
+    question.innerHTML = sportsData.results[currentQuestionIndex].question;
+}
+
+function getGamesQuestion(gamesData) {
+    question.innerHTML = gamesData.results[currentQuestionIndex].question;
+}
+
+function getShowsQuestion(showsData) {
+    question.innerHTML = showsData.results[currentQuestionIndex].question;
 }
 
 //populates the answers buttons with no issue
 function populateMovieBtnAnswers(movieData) {
+    console.log(movieData.results[currentQuestionIndex]);
     const results = movieData.results[currentQuestionIndex];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
 
     console.log(results.correct_answer);
+    console.log(currentQuestionIndex);
 
     fisherYatesShuffle(answers);
 
@@ -73,39 +90,17 @@ function populateMovieBtnAnswers(movieData) {
 }
 
 function getNextQuestion() {
-    /*let questionCount = document.getElementById('question-num');
-    questionCount.innerHTML = ++questionCounter;
-
-    let questionArray = movieData.results[currentQuestionIndex].question;
-    question.innerHTML = questionArray;
-    currentQuestionIndex++;*/
-
-    acceptingAns = true;
-    const results = movieData.results[currentQuestionIndex];
-    const answers = [...results.incorrect_answers, results.correct_answer];
-
-    console.log(results.correct_answer);
-
-    
-    clearStatusClass(ansBtns);
-    console.log(movieData.results[currentQuestionIndex]);
-    /*let questionCounter = document.getElementById('question-num');
-    questionCounter.innerHTML = ++questionCounter;
-    
-    let questionArray = movieData.results[currentQuestionIndex].question;
-    question.innerHTML = questionArray;
-    
-    fisherYatesShuffle(answers);
-
-    for(let i = 0; i <= 3; i++) {
-        let index = i + 1;
-        document.getElementById(`ans${index}`).innerHTML = answers[i];
-        document.getElementById(`ans${index}`).value = answers[i];
-        console.log(document.getElementById(`ans${index}`).innerHTML = answers[i]);
-        console.log(document.getElementById(`ans${index}`).value = answers[i]);
-    }
     currentQuestionIndex++;
-    console.log(currentQuestionIndex);*/
+    acceptingAns = true;
+    clearStatusClass(ansBtns);
+    
+    let questionCount = document.getElementById('question-num');
+    questionCount.innerHTML = ++questionCounter;
+    
+    let questionArray = movieData.results[currentQuestionIndex].question;
+    question.innerHTML = questionArray;
+
+    console.log(question);
 }
 
 function clearStatusClass(element) {
@@ -151,4 +146,7 @@ for (let i = 0; i < ansBtns.length; i++) {
     });
 }
 
-nextQuestion.addEventListener('click', getNextQuestion);
+nextQuestion.addEventListener('click', () => {
+    getNextQuestion();
+    populateMovieBtnAnswers(movieData);
+});
