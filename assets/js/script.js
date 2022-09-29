@@ -40,6 +40,8 @@ async function getTVTrivia() {
     let showsResponse = await fetch(mediumTVQuiz);
     showsData = await showsResponse.json();
     
+    getShowsQuestion(showsData);
+    populateShowsBtnAnswers(showsData);
 }
 
 async function getGamesTrivia() {
@@ -110,6 +112,21 @@ function populateSportsBtnAnswers(sportsData) {
 
 function populateGamesBtnAnswers(gamesData) {
     const results = gamesData.results[currentQuestionIndex];
+    const answers = [...results.incorrect_answers, results.correct_answer];
+
+    console.log(results.correct_answer);
+
+    fisherYatesShuffle(answers);
+
+    for (let i = 0; i <= 3; i++) {
+        let index = i + 1;
+        document.getElementById(`ans${index}`).innerHTML = answers[i];
+        document.getElementById(`ans${index}`).value = answers[i];
+    }
+}
+
+function populateShowsBtnAnswers(showsData) {
+    const results = showsData.results[currentQuestionIndex];
     const answers = [...results.incorrect_answers, results.correct_answer];
 
     console.log(results.correct_answer);
