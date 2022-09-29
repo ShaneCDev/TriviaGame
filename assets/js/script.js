@@ -24,8 +24,7 @@ let sportsData;
 let gamesData;
 let showsData;
 
-
-window.onload = getMovieTrivia(), getTVTrivia(), getSportsTrivia(), getGamesTrivia();
+window.onload = getMovieTrivia();
 
 //API call function
 async function getMovieTrivia() {
