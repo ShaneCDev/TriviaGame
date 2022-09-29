@@ -89,6 +89,22 @@ function populateMovieBtnAnswers(movieData) {
     }
 }
 
+function populateSportsBtnAnswers(sportsData) {
+    const results = sportsData.results[currentQuestionIndex];
+    const answers = [...results.incorrect_answers, results.correct_answer];
+
+    console.log(results.correct_answer);
+
+    fisherYatesShuffle(answers);
+
+    for (let i = 0; i <= 3; i++) {
+        let index = i + 1;
+        document.getElementById(`ans${index}`).innerHTML = answers[i];
+        document.getElementById(`ans${index}`).value = answers[i];
+    }
+}
+
+
 function getNextQuestion() {
     currentQuestionIndex++;
     acceptingAns = true;
