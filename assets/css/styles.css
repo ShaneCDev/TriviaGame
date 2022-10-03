@@ -285,3 +285,14 @@ a {
 .wrong {
     background-color: red;
 }
+
+/* media queries */
+@media only screen and (min-width: 600px) {
+    .flexBtn {
+        padding: 5px 42px;
+    }
+
+    .htpBtn {
+        padding: 12px 72px;
+    }
+}
