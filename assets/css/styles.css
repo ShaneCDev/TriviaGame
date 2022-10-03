@@ -287,6 +287,7 @@ a {
 }
 
 /* media queries */
+/* small devices */
 @media only screen and (min-width: 600px) {
     .flexBtn {
         padding: 5px 42px;
@@ -294,5 +295,12 @@ a {
 
     .htpBtn {
         padding: 12px 72px;
+    }
+}
+
+/* medium devices */
+@media only screen and (min-width: 768px) {
+    .flexBtn {
+        padding: 5px 60px;
     }
 }
