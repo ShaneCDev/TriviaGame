@@ -20,72 +20,42 @@ const mediumGamesQuiz = "https://opentdb.com/api.php?amount=10&category=15&diffi
 const mediumSportsQuiz = "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple";
 
 let data;
+let address;
 
 window.onload = () => {
     let query = window.location.search.slice(1);
+    console.log(query);
     switch(query) {
         case "movies":
-            getMovieTrivia();
+            address = mediumMovieQuiz;
+            getTrivia();
             break;
         case "games":
-            getGamesTrivia();
+            address = mediumGamesQuiz;
+            getTrivia();
             break;
         case "shows":
-            getTVTrivia();
+            address = mediumTVQuiz;
+            getTrivia();
             break;
         case "sports":
-            getSportsTrivia();
+            address = mediumSportsQuiz;
+            getTrivia();
             break;
     }
 }
 
 //API call function
-async function getMovieTrivia() {
-    const movieResponse = await fetch(mediumMovieQuiz);
-    data = await movieResponse.json();
+async function getTrivia() {
+    const response = await fetch(address);
+    data = await response.json();
 
-    getMovieQuestion(data);
-    populateBtnAnswers(data);
-}
-
-async function getTVTrivia() {
-    let showsResponse = await fetch(mediumTVQuiz);
-    data = await showsResponse.json();
-    
-    getShowsQuestion(data);
-    populateBtnAnswers(data);
-}
-
-async function getGamesTrivia() {
-    let gamesResponse = await fetch(mediumGamesQuiz);
-    data = await gamesResponse.json();
-
-    getGamesQuestion(data);
-    populateBtnAnswers(data);
-}
-
-async function getSportsTrivia() {
-    let sportsResponse = await fetch(mediumSportsQuiz);
-    data = await sportsResponse.json();
-
-    getSportsQuestion(data);
+    getTriviaQuestion(data);
     populateBtnAnswers(data);
 }
 
 //gets the movie question and displays it with no issue at all just need to style the H2 element so it looks better
-function getMovieQuestion(data) {
-    question.innerHTML = data.results[currentQuestionIndex].question;
-}
-
-function getSportsQuestion(data) {
-    question.innerHTML = data.results[currentQuestionIndex].question;
-}
-
-function getGamesQuestion(data) {
-    question.innerHTML = data.results[currentQuestionIndex].question;
-}
-
-function getShowsQuestion(data) {
+function getTriviaQuestion(data) {
     question.innerHTML = data.results[currentQuestionIndex].question;
 }
 

@@ -311,3 +311,10 @@ a {
         padding: 5px 88px;
     }
 }
+
+/* extra large devices */
+@media only screen and (min-width: 1200px) {
+    .flexBtn {
+        padding: 9px 112px;
+    }
+}
