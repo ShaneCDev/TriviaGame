@@ -287,6 +287,21 @@ a {
     background-color: red;
 }
 
+/* form */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playAgainBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* media queries */
 /* small devices */
 @media only screen and (min-width: 600px) {

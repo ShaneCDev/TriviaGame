@@ -25,7 +25,7 @@ let address;
 window.onload = () => {
     let query = window.location.search.slice(1);
     console.log(query);
-    switch(query) {
+    switch (query) {
         case "movies":
             address = mediumMovieQuiz;
             getTrivia();
@@ -81,14 +81,20 @@ function getNextQuestion() {
     currentQuestionIndex++;
     acceptingAns = true;
     clearStatusClass(ansBtns);
-    
+
     let questionCount = document.getElementById('question-num');
     questionCount.innerHTML = ++questionCounter;
+
+    console.log(question);
+    
+    if(currentQuestionIndex == 10) {
+        location.href = "end.html";
+    }
     
     let questionArray = data.results[currentQuestionIndex].question;
     question.innerHTML = questionArray;
 
-    console.log(question);
+
 }
 
 function clearStatusClass(element) {
