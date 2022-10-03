@@ -33,6 +33,7 @@ h1 {
 h2 {
     font-family: var(--content-text);
     text-align: center;
+    font-size: 20px;
 }
 
 a {
@@ -76,13 +77,13 @@ p {
 
 .question-count {
     font-family: var(--content-text);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .score-count {
     font-family: var(--content-text);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
