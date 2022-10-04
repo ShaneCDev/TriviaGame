@@ -93,8 +93,6 @@ function getNextQuestion() {
     
     let questionArray = data.results[currentQuestionIndex].question;
     question.innerHTML = questionArray;
-
-
 }
 
 function clearStatusClass(element) {
