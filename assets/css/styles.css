@@ -296,7 +296,7 @@ form {
 }
 
 input {
-    margin-top: 1rem;
+    margin-top: 5rem;
     margin-bottom: 0.7rem;
     width: 85%;
     font-size: 20px;
@@ -308,6 +308,10 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+input::placeholder {
+    color: black;
 }
 
 .endPageBtn {
@@ -332,6 +336,10 @@ input {
     line-height: 15px;
 }
 
+.final-score {
+    font-size: 35px;
+    font-family: var(--content-text);
+}
 
 /* media queries */
 /* small devices */
