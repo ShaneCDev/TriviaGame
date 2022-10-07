@@ -242,6 +242,10 @@ a {
     text-decoration: none;
 }
 
+#leaderboard {
+    margin-top: 15px;
+}
+
 .htpBtn:hover {
     background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
     background-color: #6c7c7c;
@@ -254,6 +258,7 @@ a {
 
 .centerBtn {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 15px;
@@ -334,6 +339,10 @@ input::placeholder {
     padding: 5px 10px;
     text-decoration: none;
     line-height: 15px;
+}
+
+.endPageBtn[disabled]:hover {
+    cursor: not-allowed;
 }
 
 .final-score {

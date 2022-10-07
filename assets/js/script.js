@@ -88,6 +88,7 @@ function getNextQuestion() {
     console.log(question);
     
     if(currentQuestionIndex == 10) {
+        localStorage.setItem("mostRecentScore", score);
         questionCount.innerHTML = 10;
         location.href = "end.html";
     }
