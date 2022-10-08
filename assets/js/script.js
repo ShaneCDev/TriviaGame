@@ -4,6 +4,8 @@ const showsBtn = document.getElementById('showsBtn');
 const gameBtn = document.getElementById('gamesBtn');
 const sportsBtn = document.getElementById('sportsBtn');
 
+const title = document.getElementById('titleQuiz');
+
 //Answer Buttons
 const ansBtns = document.getElementsByClassName('flexAnsBtn');
 let acceptingAns = true;
@@ -27,18 +29,22 @@ window.onload = () => {
     console.log(query);
     switch (query) {
         case "movies":
+            title.innerHTML = 'Trivia Game - Movies!';
             address = mediumMovieQuiz;
             getTrivia();
             break;
         case "games":
+            title.innerHTML = 'Trivia Game - Games!';
             address = mediumGamesQuiz;
             getTrivia();
             break;
         case "shows":
+            title.innerHTML = 'Trivia Game - Shows!';
             address = mediumTVQuiz;
             getTrivia();
             break;
         case "sports":
+            title.innerHTML = 'Trivia Game - Sports!';
             address = mediumSportsQuiz;
             getTrivia();
             break;
