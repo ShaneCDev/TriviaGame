@@ -376,6 +376,12 @@ input::placeholder {
     font-family: var(--content-text);
 }
 
+.leaderboardScore {
+    background: var(--fourth-colour);
+    color: var(--main-colour);
+    margin-bottom: 20px;
+}
+
 /* media queries */
 /* small devices */
 @media only screen and (min-width: 600px) {
