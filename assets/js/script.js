@@ -32,21 +32,25 @@ window.onload = () => {
             title.innerHTML = 'Trivia Game - Movies!';
             address = mediumMovieQuiz;
             getTrivia();
+            timer();
             break;
         case "games":
             title.innerHTML = 'Trivia Game - Games!';
             address = mediumGamesQuiz;
             getTrivia();
+            timer();
             break;
         case "shows":
             title.innerHTML = 'Trivia Game - Shows!';
             address = mediumTVQuiz;
             getTrivia();
+            timer();
             break;
         case "sports":
             title.innerHTML = 'Trivia Game - Sports!';
             address = mediumSportsQuiz;
             getTrivia();
+            timer();
             break;
     }
 }
@@ -135,6 +139,18 @@ function fisherYatesShuffle(array) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+function timer() {
+    let seconds = 180;
+    let timer = setInterval(function() {
+        document.getElementById('timer').innerHTML = seconds;
+        seconds--;
+        if (seconds < 0) {
+            clearInterval(timer);
+            location.href = "end.html";
+        }
+    }, 1000);
 }
 
 // loop through answer buttons and assign event listener to each of them which then calls the checkAnswer function
