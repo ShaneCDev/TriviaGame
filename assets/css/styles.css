@@ -87,6 +87,19 @@ p {
     font-weight: bold;
 }
 
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.timer > p {
+    font-size: 1.6rem;
+    font-family: var(--content-text);
+    font-weight: bold;
+}
+
 .modal {
     display: flex;
     align-items: center;
@@ -134,7 +147,7 @@ a {
 }
 
 /* buttons */
-#counters {
+.counters {
     display: flex;
     justify-content: space-between;
 }
