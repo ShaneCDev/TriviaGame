@@ -19,7 +19,6 @@
     box-sizing: border-box;
 }
 
-
 h1 {
     font-family: var(--header-text);
     font-size: 3rem;
@@ -390,9 +389,10 @@ input::placeholder {
 }
 
 .leaderboardScore {
-    background: var(--fourth-colour);
-    color: var(--main-colour);
-    margin-bottom: 20px;
+    color: black;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    list-style-type: decimal;
 }
 
 /* media queries */
