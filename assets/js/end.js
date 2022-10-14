@@ -8,7 +8,6 @@ console.log(highScores);
 
 finalScore.innerHTML = score;
 
-
 function saveHighScore(e) {
     e.preventDefault();
 
@@ -34,4 +33,6 @@ username.addEventListener('keyup', () => {
 
 saveScoreBtn.addEventListener('click', function(e) {
     saveHighScore(e);
+    alert('Score Saved, go back to the homepage and see where you placed on the leaderboard!');
+    saveScoreBtn.disabled = true;
 });
