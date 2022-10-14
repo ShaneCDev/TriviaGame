@@ -142,11 +142,12 @@ function fisherYatesShuffle(array) {
 }
 
 function timer() {
-    let seconds = 180;
+    let seconds = 120;
     let timer = setInterval(function() {
         document.getElementById('timer').innerHTML = seconds;
         seconds--;
         if (seconds < 0) {
+            localStorage.setItem("mostRecentScore", score);
             clearInterval(timer);
             location.href = "end.html";
         }
