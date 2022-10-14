@@ -26,7 +26,7 @@ let address;
 
 window.onload = () => {
     let query = window.location.search.slice(1);
-    console.log(query);
+
     switch (query) {
         case "movies":
             title.innerHTML = 'Trivia Game - Movies!';
@@ -71,12 +71,8 @@ function getTriviaQuestion(data) {
 
 //populates the answers buttons with no issue
 function populateBtnAnswers(data) {
-    console.log(data.results[currentQuestionIndex]);
     const results = data.results[currentQuestionIndex];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
-
-    console.log(results.correct_answer);
-    console.log(currentQuestionIndex);
 
     fisherYatesShuffle(answers);
 
@@ -94,8 +90,6 @@ function getNextQuestion() {
 
     let questionCount = document.getElementById('question-num');
     questionCount.innerHTML = ++questionCounter;
-
-    console.log(question);
     
     if(currentQuestionIndex == 10) {
         localStorage.setItem("mostRecentScore", score);
@@ -108,7 +102,6 @@ function getNextQuestion() {
 }
 
 function clearStatusClass(element) {
-    console.log(element);
     Array.from(element).forEach(button => {
         button.classList.remove('right-ans');
         button.classList.remove('wrong-ans');
