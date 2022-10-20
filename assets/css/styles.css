@@ -405,6 +405,11 @@ input::placeholder {
     .htpBtn {
         padding: 12px 72px;
     }
+
+    .leaderboardGoHomeBtn {
+        margin: 20px 5px;
+        padding: 0%;
+    }
 }
 
 /* medium devices */
