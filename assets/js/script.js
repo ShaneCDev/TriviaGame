@@ -32,13 +32,13 @@ window.onload = () => {
             title.innerHTML = 'Trivia Game - Movies!';
             address = mediumMovieQuiz;
             getTrivia();
-            timer();
+            //timer();
             break;
         case "games":
             title.innerHTML = 'Trivia Game - Games!';
             address = mediumGamesQuiz;
             getTrivia();
-            timer();
+            //timer();
             break;
         case "shows":
             title.innerHTML = 'Trivia Game - Shows!';
@@ -157,6 +157,8 @@ for (let i = 0; i < ansBtns.length; i++) {
 }
 
 nextQuestion.addEventListener('click', () => {
-    getNextQuestion();
-    populateBtnAnswers(data);
+    if(!acceptingAns) {
+        getNextQuestion();
+        populateBtnAnswers(data);
+    }
 });

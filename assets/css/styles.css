@@ -35,6 +35,10 @@ h2 {
     font-size: 20px;
 }
 
+.welcome {
+    margin-bottom: 15px;
+}
+
 a {
     text-decoration: none;
 }
@@ -56,6 +60,16 @@ p {
 }
 
 #content-container {
+    background-color: var(--fourth-colour);
+    opacity: 0.9;
+    width: 95%;
+    margin: auto;
+    padding: 1rem;
+    color: var(--sec-colour);
+    border-radius: 1.5rem;
+}
+
+.index-container {
     background-color: var(--fourth-colour);
     opacity: 0.9;
     width: 95%;
@@ -285,6 +299,8 @@ a {
 .ans-btns {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 15px;
 }
 
@@ -343,6 +359,7 @@ input {
     margin-bottom: 0.7rem;
     width: 85%;
     font-size: 20px;
+    text-align: center;
     border: none;
 }
 
@@ -423,6 +440,30 @@ input::placeholder {
 @media only screen and (min-width: 992px) {
     .flexBtn {
         padding: 5px 88px;
+    }
+
+    .htpBtn {
+        width: 55%;
+    }
+
+    .checkAnsBtn {
+        width: 55%;
+    }
+
+    .flexAnsBtn {
+        width: 55%;
+    }
+
+    #content-container {
+        width: 70%;
+    }
+
+    .endPageBtn {
+        width: 65%;
+    }
+
+    input {
+        width: 65%;
     }
 }
 
