@@ -32,13 +32,13 @@ window.onload = () => {
             title.innerHTML = 'Trivia Game - Movies!';
             address = mediumMovieQuiz;
             getTrivia();
-            //timer();
+            timer();
             break;
         case "games":
             title.innerHTML = 'Trivia Game - Games!';
             address = mediumGamesQuiz;
             getTrivia();
-            //timer();
+            timer();
             break;
         case "shows":
             title.innerHTML = 'Trivia Game - Shows!';

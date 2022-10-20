@@ -471,5 +471,22 @@ input::placeholder {
 @media only screen and (min-width: 1200px) {
     .flexBtn {
         padding: 9px 112px;
+        width: 70%;
+    }
+
+    #content-container {
+        width: 55%;
+    }
+
+    .index-container {
+        width: 55%;
+    }
+
+    .endPageBtn {
+        width: 35%;
+    }
+
+    input {
+        width: 35%;
     }
 }
