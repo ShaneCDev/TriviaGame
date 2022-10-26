@@ -16,7 +16,7 @@ function saveHighScore(e) {
     };
     highScores.push(scoreObj);
 
-    highScores.sort( (a,b) => b.score - a.score)
+    highScores.sort( (a,b) => b.score - a.score);
 
     highScores.splice(5);
 

@@ -1,9 +1,3 @@
-//Category Buttons
-const movieBtn = document.getElementById('movieBtn');
-const showsBtn = document.getElementById('showsBtn');
-const gameBtn = document.getElementById('gamesBtn');
-const sportsBtn = document.getElementById('sportsBtn');
-
 const title = document.getElementById('titleQuiz');
 
 //Answer Buttons
@@ -53,7 +47,7 @@ window.onload = () => {
             timer();
             break;
     }
-}
+};
 
 //API call function
 async function getTrivia() {
@@ -77,7 +71,7 @@ function populateBtnAnswers(data) {
     fisherYatesShuffle(answers);
 
     for (let i = 0; i <= 3; i++) {
-        let index = i + 1
+        let index = i + 1;
         document.getElementById(`ans${index}`).innerHTML = answers[i];
         document.getElementById(`ans${index}`).value = answers[i];
     }
