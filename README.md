@@ -52,13 +52,12 @@ WIP
 
 # 5. Surface
 - ## Colour
-![Colour Palette](Image to be added)
+![Colour Palette](assets/img/colourpalette.png)
 
 The colour palette is based on a another idea I had for a website.
 
 - ## Fonts
----
-'Yellotail' and 'Lato' are the fonts used for this website and have been imported from Google fonts.
+'Yellowtail' and 'Lato' are the fonts used for this website and have been imported from Google fonts.
 
 # Features
 ## Existing Features
@@ -78,10 +77,24 @@ The colour palette is based on a another idea I had for a website.
 
 # Testing
 - ## HTML Validator
-
+    At various stages HTML Validation was done.
+    ![HTML Validation](/assets/img/index%20html%20validator.png)
 - ## CSS Validator
+    At various stages CSS Validation was done.
+    ![CSS Validation](/assets/img/css%20validator.png)
+
+- ## Lighthouse
+    At various stages Lighthouse testing was done.
+
+    ![Lighthouse](/assets/img/lighthouse%20desktop%20quiz.png)
+    ![Lighthouse](/assets/img/lighthouse%20mobile.png)
 
 - ## Browser Compatability
+The website was tested on the following browsers:
+- Google Chrome: Version 105.0.5195.127 (Official Build) (64-bit)
+- Mozilla Firefox: Version 104.0.2 (64-bit)
+- OperaGX: Version 90.0.4480.100
+
 
 # Deployment
 The website was deployed using GitHub Pages:
@@ -91,10 +104,11 @@ The website was deployed using GitHub Pages:
 4. Once "main" is selected, the page will be refreshed automatically and the page will indicate successful deployment and the link will appear.
 5. Further changes will be automatically deployed to the live site using the "git push" command from the development environment.
 
-The website can be viewed here. [MGS](https://shanecdev.github.io/quiz/)
+The website can be viewed here. [Trivia Game](https://shanecdev.github.io/quiz/)
 
 # Credits
 - ## Coding
+- Some functions of the quiz were built following a tutorial from Web Dev Simplified. [Click here for video](https://www.youtube.com/watch?v=riDzcEQbX6k)
 
 # Acknowledgments
 I would like to thank:
