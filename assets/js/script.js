@@ -26,25 +26,21 @@ window.onload = () => {
             title.innerHTML = 'Trivia Game - Movies!';
             address = mediumMovieQuiz;
             getTrivia();
-            timer();
             break;
         case "games":
             title.innerHTML = 'Trivia Game - Games!';
             address = mediumGamesQuiz;
             getTrivia();
-            timer();
             break;
         case "shows":
             title.innerHTML = 'Trivia Game - Shows!';
             address = mediumTVQuiz;
             getTrivia();
-            timer();
             break;
         case "sports":
             title.innerHTML = 'Trivia Game - Sports!';
             address = mediumSportsQuiz;
             getTrivia();
-            timer();
             break;
     }
 };
@@ -56,14 +52,13 @@ async function getTrivia() {
 
     getTriviaQuestion(data);
     populateBtnAnswers(data);
+    timer();
 }
 
-//gets the movie question and displays it with no issue at all just need to style the H2 element so it looks better
 function getTriviaQuestion(data) {
     question.innerHTML = data.results[currentQuestionIndex].question;
 }
 
-//populates the answers buttons with no issue
 function populateBtnAnswers(data) {
     const results = data.results[currentQuestionIndex];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
@@ -95,6 +90,11 @@ function getNextQuestion() {
     question.innerHTML = questionArray;
 }
 
+/*
+This function was made using Web Dev Simplified tutorials
+when I was learning how to add and remove classes to buttons
+Tutorial here: https://youtu.be/riDzcEQbX6k
+*/
 function clearStatusClass(element) {
     Array.from(element).forEach(button => {
         button.classList.remove('right-ans');
@@ -121,6 +121,10 @@ function incrementScore() {
     scoreCounter.innerHTML = ++score;
 }
 
+/*
+This function takes the array of answers and shuffles them around so that it is random 
+and not hardcoded to a single button
+*/
 function fisherYatesShuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -150,6 +154,7 @@ for (let i = 0; i < ansBtns.length; i++) {
     });
 }
 
+// added the if statement to fix a bug which was allowing the user to click the "next question" button before selecting an answer
 nextQuestion.addEventListener('click', () => {
     if(!acceptingAns) {
         getNextQuestion();
