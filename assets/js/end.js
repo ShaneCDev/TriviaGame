@@ -8,7 +8,7 @@ const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 finalScore.innerHTML = score;
 
 /*
-This function was made using this tutorial from James Q Quick: https://youtu.be/jfOv18lCMmw
+This function was made using this tutorial from James Q Quick: https://youtu.be/DFhmNLKwwGw
 */
 function saveHighScore(e) {
     e.preventDefault();
@@ -17,6 +17,7 @@ function saveHighScore(e) {
         score: score,
         name: username.value
     };
+    
     highScores.push(scoreObj);
 
     highScores.sort( (a,b) => b.score - a.score);
