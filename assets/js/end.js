@@ -7,6 +7,9 @@ const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 finalScore.innerHTML = score;
 
+/*
+This function was made using this tutorial from James Q Quick: https://youtu.be/jfOv18lCMmw
+*/
 function saveHighScore(e) {
     e.preventDefault();
 
