@@ -165,11 +165,6 @@ a {
     justify-content: space-between;
 }
 
-.next-btn {
-    background-color: black;
-    color: white;
-}
-
 .close-modal {
     box-shadow: inset 0px 1px 3px 0px #91b8b3;
     background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
@@ -206,34 +201,6 @@ a {
     line-height: 45px;
 }
 
-.flexBtn:hover {
-    background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-    background-color: #6c7c7c;
-}
-
-.close-modal:hover {
-    background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-    background-color: #6c7c7c;
-}
-
-.flexAnsBtn {
-    margin: 5px 20px;
-    text-align: center;
-    box-shadow: inset 0px 1px 3px 0px #91b8b3;
-    background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-    background-color: #768d87;
-    border-radius: 15px;
-    border: 2px solid #566963;
-    display: inline-block;
-    cursor: pointer;
-    color: #fff;
-    font-family: var(--content-text);
-    font-size: 15px;
-    font-weight: bold;
-    padding: 8px 42px;
-    text-decoration: none;
-}
-
 .checkAnsBtn {
     margin: 5px 20px;
     text-align: center;
@@ -250,6 +217,35 @@ a {
     font-weight: bold;
     padding: 8px 42px;
     text-decoration: none;
+    width: 63%;
+}
+
+.quiz-btn {
+    margin: 5px 20px;
+    padding: 8px 42px;
+    width: 63%;
+    line-height: normal;
+}
+
+.end-page {
+    width: 85%;
+    line-height: 15px;
+    margin-top: 5px;
+}
+
+.checkAnsBtn:hover {
+    background: linear-gradient(to bottom, #011414 5%, #01130e 100%);
+    background-color: #031d16;
+}
+
+.flexBtn:hover {
+    background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+    background-color: #6c7c7c;
+}
+
+.close-modal:hover {
+    background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+    background-color: #6c7c7c;
 }
 
 .htpBtn {
@@ -279,11 +275,6 @@ a {
     background-color: #6c7c7c;
 }
 
-.leaderboardGoHomeBtn:hover {
-    background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-    background-color: #6c7c7c;
-}
-
 .htpBtn:active {
     position: relative;
     top: 1px;
@@ -306,25 +297,11 @@ a {
     margin-top: 15px;
 }
 
-.leaderboardGoHomeBtn {
-    margin: 0 5px;
-    text-align: center;
-    box-shadow: inset 0px 1px 3px 0px #91b8b3;
-    background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-    background-color: #768d87;
-    border-radius: 15px;
-    border: 2px solid #566963;
+.leaderboard-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    color: #fff;
-    font-family: var(--content-text);
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px 10px;
-    text-decoration: none;
-    line-height: 45px;
+    line-height: 30px;
 }
 
 /* dynamic classes */
@@ -376,29 +353,7 @@ input::placeholder {
     color: black;
 }
 
-.endPageBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: inset 0px 1px 3px 0px #91b8b3;
-    background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-    background-color: #768d87;
-    border-radius: 15px;
-    border: 2px solid #566963;
-    cursor: pointer;
-    color: #fff;
-    font-family: var(--content-text);
-    font-size: 15px;
-    width: 85%;
-    margin-top: 5px;
-    font-weight: bold;
-    padding: 5px 10px;
-    text-decoration: none;
-    line-height: 15px;
-}
-
-.endPageBtn[disabled]:hover {
+.flexBtn[disabled]:hover {
     cursor: not-allowed;
 }
 
@@ -425,9 +380,21 @@ input::placeholder {
         padding: 12px 72px;
     }
 
-    .leaderboardGoHomeBtn {
+    .leaderboard-btn {
         margin: 20px 5px;
-        padding: 0%;
+    }
+
+    #content-container {
+        width: 85%;
+    }
+
+    .quiz-btn {
+        width: 50%;
+        padding: 8px 42px;
+    }
+
+    .checkAnsBtn {
+        width: 50%;
     }
 }
 
@@ -435,6 +402,19 @@ input::placeholder {
 @media only screen and (min-width: 768px) {
     .flexBtn {
         padding: 5px 60px;
+        width: 60%;
+    }
+
+    .quiz-btn {
+        padding: 8px 42px;
+    }
+
+    #content-container {
+        width: 75%;
+    }
+
+    .checkAnsBtn {
+        width: 60%;
     }
 }
 
@@ -452,15 +432,15 @@ input::placeholder {
         width: 55%;
     }
 
-    .flexAnsBtn {
+    .quiz-btn {
         width: 55%;
     }
 
     #content-container {
-        width: 70%;
+        width: 65%;
     }
 
-    .endPageBtn {
+    .end-page {
         width: 65%;
     }
 
@@ -476,15 +456,24 @@ input::placeholder {
         width: 70%;
     }
 
-    #content-container {
+    .leaderboard-btn {
+        width: auto;
+    }
+
+    .quiz-btn {
         width: 55%;
+        padding: 8px 42px;
+    }
+
+    #content-container {
+        width: 70%;
     }
 
     .index-container {
         width: 75%;
     }
 
-    .endPageBtn {
+    .end-page {
         width: 35%;
     }
 

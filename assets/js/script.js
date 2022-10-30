@@ -1,7 +1,7 @@
 const title = document.getElementById('titleQuiz');
 
 //Answer Buttons
-const ansBtns = document.getElementsByClassName('flexAnsBtn');
+const ansBtns = document.getElementsByClassName('flexBtn');
 let acceptingAns = true;
 let score = 0;
 let currentQuestionIndex = 0;
