@@ -1,18 +1,18 @@
 # Trivia Game
 
-This is a simple trivia game for anyone who wants to test their knowledge under the following four categories, Movies, Games, TV Shows and Sports.
-AmIresponsive image to go here.
+This is a simple trivia game for anyone who wants to test their knowledge under the following four categories, Movies, Games, TV Shows and Sports. The main purpose of this site is to test users knowledge of various different categories.
+![AmIResponsive](assets/img/amiresponsive.png)
 The website can be viewed here. [Trivia Game](https://shanecdev.github.io/quiz/)
 
 # Index - Table of Contents
 
-- [User Experience (UX)]
-- [Features]()
-- [Technologies Used]()
-- [Testing]()
-- [Deployment]()
-- [Credits]()
-- [Acknowledgments]()
+- [User Experience (UX)](https://github.com/ShaneCDev/quiz#user-experience-ux)
+- [Features](https://github.com/ShaneCDev/quiz#features)
+- [Technologies Used](https://github.com/ShaneCDev/quiz#technologies-used)
+- [Testing](https://github.com/ShaneCDev/quiz#testing)
+- [Deployment](https://github.com/ShaneCDev/quiz#deployment)
+- [Credits](https://github.com/ShaneCDev/quiz#credits)
+- [Acknowledgments](https://github.com/ShaneCDev/quiz#acknowledgments)
 
 # User Experience (UX)
 
