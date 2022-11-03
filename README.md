@@ -48,7 +48,10 @@ The website can be viewed here. [Trivia Game](https://shanecdev.github.io/quiz/)
 # 4. Skeleton
 ## Wireframes
 The wireframes were made using Balsamiq.
-WIP
+- [Home](/assets/img/wireframes/index.png)
+- [Quiz](/assets/img/wireframes/quiz.png)
+- [End](/assets/img/wireframes/end.png)
+- [Leaderboard](/assets/img/wireframes/leaderboard.png)
 
 # 5. Surface
 - ## Colour
