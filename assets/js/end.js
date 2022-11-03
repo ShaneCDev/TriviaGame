@@ -18,6 +18,11 @@ function saveHighScore(e) {
         name: username.value
     };
     
+    /* This might work will need to test out later
+    updScoreObj = scoreObj.findIndex((obj => obj.name == username.value))
+    scoreObj[updScoreObj].score = score;
+    */
+
     highScores.push(scoreObj);
 
     highScores.sort( (a,b) => b.score - a.score);
