@@ -73,10 +73,12 @@ The colour palette is based on a another idea I had for a website.
 3. [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 - ## Misc Software
-- [Google Fonts](https://fonts.google.com/)
-- [Gitpod](https://gitpod.io/)
-- [Balsamiq](https://balsamiq.com/)
-- [Github](https://github.com/)
+- [Google Fonts](https://fonts.google.com/) - To import fonts used on the site.
+- [Gitpod](https://gitpod.io/) - IDE used to create the site.
+- [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+- [Github](https://github.com/) - To save and store the files for the site.
+- [Google Developer Tools](https://developer.chrome.com/docs/) - To troubleshoot and test features and solve issues with responsiveness.
+- [Open Trivia Database](https://opentdb.com/) - API used for the quiz.
 
 # Testing
 - ## HTML Validator
@@ -92,6 +94,14 @@ The colour palette is based on a another idea I had for a website.
     ![Lighthouse](/assets/img/lighthouse%20desktop%20quiz.png)
     ![Lighthouse](/assets/img/lighthouse%20mobile.png)
 
+- ## Solved Bugs
+
+| No | Bug | How I solved the issue |
+| :--- | :--- | :--- |
+| 1 | The user was able to click the 'Next Question' button without actually selecting an answer. | I added a boolean value which made it so that you could not click the 'Next Question' button without selecting an answer first.
+| 2 | I couldn't add the 'wrong-ans' and 'right-ans' classes to whatever button the user clicked. | I was watching a few quiz videos on youtube whilst learning how to go about writing this quiz and came across Web Dev Simplifieds quiz and he went over it in his video so I implemented his solution by returning the answer buttons as a nodelist and then converting them to an array using 'Array.from' I was able to solve the issue.
+| 3 | When playing the quiz I have a 'Question No:' counter that should show the relative Question number and when you click the 'Next Question' button that question number increments by 1. But when I got to the last question it was stuck at 9/10 instead of 10/10. | I added a currentQuestionIndex variable and added an if statement which said if currentQuestionIndex = 10 the 'Question No: 10/10'
+
 - ## Browser Compatability
 The website was tested on the following browsers:
 - Google Chrome: Version 105.0.5195.127 (Official Build) (64-bit)
@@ -99,15 +109,37 @@ The website was tested on the following browsers:
 - OperaGX: Version 90.0.4480.100
 
 
-# Deployment
-The website was deployed using GitHub Pages:
+# Deployment & Local Development
+## Deployment
+The website was deployed using GitHub Pages - [Trivia Game](https://shanecdev.github.io/quiz/index.html)
+
+To deploy the site using GitHub pages: 
+
 1. Go into a repository, click on Settings.
 2. Click on GitHub Pages.
 3. Click on branches and select "main" from the dropdown.
 4. Once "main" is selected, the page will be refreshed automatically and the page will indicate successful deployment and the link will appear.
 5. Further changes will be automatically deployed to the live site using the "git push" command from the development environment.
 
-The website can be viewed here. [Trivia Game](https://shanecdev.github.io/quiz/)
+## Local Development
+
+### How to fork
+
+To fork the repository: 
+
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, [ShaneCDev/quiz](https://github.com/ShaneCDev/quiz)
+3. Click the fork button in the top right corner.
+
+### How to Clone
+
+To clone the repository:
+
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, [ShaneCDev/quiz](https://github.com/ShaneCDev/quiz)
+3. Click on the code button, select whether you would like to with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste hte link you copied in step 3. Press enter.
 
 # Credits
 - ## Coding
