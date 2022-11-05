@@ -57,7 +57,7 @@ The wireframes were made using Balsamiq.
 - ## Colour
 ![Colour Palette](assets/img/colourpalette.png)
 
-The colour palette is based on a another idea I had for a website.
+The colour palette is based on another idea I had for a website.
 
 - ## Fonts
 'Yellowtail' and 'Lato' are the fonts used for this website and have been imported from Google fonts.

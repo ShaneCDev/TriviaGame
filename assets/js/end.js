@@ -17,15 +17,18 @@ function saveHighScore(e) {
         score: score,
         name: username.value
     };
-    
-    /* This might work will need to test out later
-    updScoreObj = scoreObj.findIndex((obj => obj.name == username.value))
-    scoreObj[updScoreObj].score = score;
-    */
+
+    for(let i = 0; i < highScores.length; i++) {
+        if(highScores[i].name === username.value && highScores[i].score < score) {
+            highScores[i].score = score;
+            console.log(highScores[i].score);
+            return;
+        }
+    }
 
     highScores.push(scoreObj);
 
-    highScores.sort( (a,b) => b.score - a.score);
+    highScores.sort((a, b) => b.score - a.score);
 
     highScores.splice(5);
 
@@ -37,7 +40,7 @@ username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value;
 });
 
-saveScoreBtn.addEventListener('click', function(e) {
+saveScoreBtn.addEventListener('click', function (e) {
     saveHighScore(e);
     alert('Score Saved, go back to the homepage and see where you placed on the leaderboard!');
     saveScoreBtn.disabled = true;
