@@ -5,6 +5,8 @@ const score = localStorage.getItem('mostRecentScore');
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
+let sameUser = highScores.find(e => e.name === username.value);
+
 finalScore.innerHTML = score;
 
 /*
@@ -21,7 +23,7 @@ function saveHighScore(e) {
     for(let i = 0; i < highScores.length; i++) {
         if(highScores[i].name === username.value && highScores[i].score < score) {
             highScores[i].score = score;
-            console.log(highScores[i].score);
+            highScores.push(scoreObj.score);
             return;
         }
     }
@@ -33,6 +35,7 @@ function saveHighScore(e) {
     highScores.splice(5);
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
+
 }
 
 
