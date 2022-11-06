@@ -10,7 +10,9 @@ let sameUser = highScores.find(e => e.name === username.value);
 finalScore.innerHTML = score;
 
 /*
-This function was made using this tutorial from James Q Quick: https://youtu.be/DFhmNLKwwGw
+This function was partially made using this tutorial from James Q Quick: https://youtu.be/DFhmNLKwwGw
+I modified it so that if the same user plays the quiz again and enters the same name their score
+gets updated instead of adding another entry to the leaderboard with the same name
 */
 function saveHighScore(e) {
     e.preventDefault();
@@ -23,7 +25,7 @@ function saveHighScore(e) {
     for(let i = 0; i < highScores.length; i++) {
         if(highScores[i].name === username.value && highScores[i].score < score) {
             highScores[i].score = score;
-            highScores.push(scoreObj.score);
+            localStorage.setItem('highScores', JSON.stringify(highScores));
             return;
         }
     }
