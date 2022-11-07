@@ -8,6 +8,7 @@ The website can be viewed here. [Trivia Game](https://shanecdev.github.io/quiz/)
 
 - [User Experience (UX)](https://github.com/ShaneCDev/quiz#user-experience-ux)
 - [Features](https://github.com/ShaneCDev/quiz#features)
+- [Future Implementations](https://github.com/ShaneCDev/quiz#future-implementations)
 - [Technologies Used](https://github.com/ShaneCDev/quiz#technologies-used)
 - [Testing](https://github.com/ShaneCDev/quiz#testing)
 - [Deployment](https://github.com/ShaneCDev/quiz#deployment)
@@ -64,6 +65,57 @@ The colour palette is based on another idea I had for a website.
 
 # Features
 ## Existing Features
+This website is compromised of a home page, quiz page, end page and finally a leaderboard page.
+
+All pages on the site are responsive and have:
+- A favicon in the browser tab.
+
+![Favicon](/assets/img/favicon%20browser%20tab.png)
+
+- The name of the site is located at the top of the page and it also acts as a link back to the home page.
+
+![Site name](/assets/img/title.png)
+
+## The Home page
+The home page displays the site name as a title and then a container that holds 6 buttons, including a how to play button so users know how to play the game. Also users can go back to the home page at anytime by clicking the title at the top of the screen as it also acts as a link back to index.html.
+
+![Home page image](/assets/img/homepage.png)
+
+The how to play button opens up a modal that shows the user hwo to play the quiz. Inside the modal is a close button which when clicked will close the modal and user can carry on.
+
+![Modal](/assets/img/modal-open.png)
+
+Any of the 4 category buttons will take you to the quiz page and the user can answer questions relative to the category they have chosen.
+
+## The Quiz page
+When a category is chosen users are met with this page which contains a question, timer, score and question number counter, there are also 5 buttons, 4 of which are answers relative to the question and the 5th button is a next question button which will take the user to the next question only when they have selected an answer first so they can't just click next question over and over as it will not work.
+
+![Quiz page](/assets/img/quizpage.png)
+
+## The End page
+Once the user has answered all 10 questions they will be taken to the end page where they will enter their name and save their score and add it to the leaderboard.
+
+![End page](/assets/img/endpage.png)
+
+The user is unable to click the save score button without entering something into the textfield, if it is their first time playing the quiz they will be met with an alert saying "Score saved" and if its there 2nd or 3rd time playing and they get a better score than previously and are using the same username they will be met with an alert that says "Score updated" see both below.
+
+![Score saved](/assets/img/scoresaved.png)
+
+![Score updated](/assets/img/scoreupdated.png)
+
+## The Leaderboard page
+The user can come here to see where they rank on the leaderboard.
+
+![Leaderboard](/assets/img/leaderboard.png)
+
+# Future Implementations
+
+In future implementations of this quiz I would like to:
+
+1. Give the user the option to select the difficulty of the quiz.
+2. Give the user the option to choose how many questions in their quiz.
+3. Create a backend database to save the scores rather than using local storage.
+4. Maybe look into making the quiz multiplayer so that it can be played in teams and I think that could be a lot of fun.
 
 # Technologies Used
 
@@ -79,6 +131,7 @@ The colour palette is based on another idea I had for a website.
 - [Github](https://github.com/) - To save and store the files for the site.
 - [Google Developer Tools](https://developer.chrome.com/docs/) - To troubleshoot and test features and solve issues with responsiveness.
 - [Open Trivia Database](https://opentdb.com/) - API used for the quiz.
+- [Am I Responsive](http://ami.responsivedesign.is/)
 
 # Testing
 - ## HTML Validator
@@ -87,6 +140,10 @@ The colour palette is based on another idea I had for a website.
 - ## CSS Validator
     At various stages CSS Validation was done.
     ![CSS Validation](/assets/img/css%20validator.png)
+
+- ## JSHint
+    At various stages JSHint validation was done.
+    ![JSHint Validation](/assets/img/jshint.png)
 
 - ## Lighthouse
     At various stages Lighthouse testing was done.
@@ -145,6 +202,10 @@ To clone the repository:
 # Credits
 - ## Coding
 - Some functions of the quiz were built following a tutorial from Web Dev Simplified. [Click here for video](https://www.youtube.com/watch?v=riDzcEQbX6k)
+- [Fisher-Yates Shuffle](https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/) used for shuffling the array of answers.
+- I used this [video](https://www.youtube.com/watch?v=jfOv18lCMmw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=10) by James Q Quick which taught me how to insert local storage data into my leaderboard page, I had to implement the function differently as he did not account for the user playing the quiz multiple times from what I can see.
+- Also used this [video](https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=9) from James Q Quick whilst researching local storage.
+- I used [this](https://www.w3schools.com/howto/howto_css_modals.asp) whilst learning how to make modals.
 
 # Acknowledgments
 I would like to thank:
