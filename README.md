@@ -6,14 +6,14 @@ The website can be viewed here. [Trivia Game](https://shanecdev.github.io/quiz/)
 
 # Index - Table of Contents
 
-- [User Experience (UX)](https://github.com/ShaneCDev/quiz#user-experience-ux)
-- [Features](https://github.com/ShaneCDev/quiz#features)
-- [Future Implementations](https://github.com/ShaneCDev/quiz#future-implementations)
-- [Technologies Used](https://github.com/ShaneCDev/quiz#technologies-used)
-- [Testing](https://github.com/ShaneCDev/quiz#testing)
-- [Deployment](https://github.com/ShaneCDev/quiz#deployment)
-- [Credits](https://github.com/ShaneCDev/quiz#credits)
-- [Acknowledgments](https://github.com/ShaneCDev/quiz#acknowledgments)
+- [User Experience (UX)](https://github.com/ShaneCDev/TriviaGame#user-experience-ux)
+- [Features](https://github.com/ShaneCDev/TriviaGame#features)
+- [Future Implementations](https://github.com/ShaneCDev/TriviaGame#future-implementations)
+- [Technologies Used](https://github.com/ShaneCDev/TriviaGame#technologies-used)
+- [Testing](https://github.com/ShaneCDev/TriviaGame#testing)
+- [Deployment](https://github.com/ShaneCDev/TriviaGame#deployment)
+- [Credits](https://github.com/ShaneCDev/TriviaGame#credits)
+- [Acknowledgments](https://github.com/ShaneCDev/TriviaGame#acknowledgments)
 
 # User Experience (UX)
 
