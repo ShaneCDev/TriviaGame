@@ -26,6 +26,7 @@ function saveHighScore(e) {
         if(highScores[i].name === username.value && highScores[i].score < score) {
             highScores[i].score = score;
             localStorage.setItem('highScores', JSON.stringify(highScores));
+            alert("Score updated! Go to the leaderboard and check out your updated score!");
             return;
         }
     }
@@ -38,6 +39,7 @@ function saveHighScore(e) {
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
 
+    alert('Score Saved, go back to the homepage and see where you placed on the leaderboard!');
 }
 
 
@@ -47,6 +49,5 @@ username.addEventListener('keyup', () => {
 
 saveScoreBtn.addEventListener('click', function (e) {
     saveHighScore(e);
-    alert('Score Saved, go back to the homepage and see where you placed on the leaderboard!');
     saveScoreBtn.disabled = true;
 });
