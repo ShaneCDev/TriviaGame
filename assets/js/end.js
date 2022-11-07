@@ -5,7 +5,6 @@ const score = localStorage.getItem('mostRecentScore');
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-let sameUser = highScores.find(e => e.name === username.value);
 
 finalScore.innerHTML = score;
 
