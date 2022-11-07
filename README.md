@@ -2,7 +2,7 @@
 
 This is a simple trivia game for anyone who wants to test their knowledge under the following four categories, Movies, Games, TV Shows and Sports. The main purpose of this site is to test users knowledge of various different categories.
 ![AmIResponsive](assets/img/amiresponsive.png)
-The website can be viewed here. [Trivia Game](https://shanecdev.github.io/quiz/)
+The website can be viewed here. [Trivia Game](https://shanecdev.github.io/TriviaGame/)
 
 # Index - Table of Contents
 
