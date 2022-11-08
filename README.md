@@ -70,7 +70,7 @@ This website is compromised of a home page, quiz page, end page and finally a le
 All pages on the site are responsive and have:
 - A favicon in the browser tab.
 
-![Favicon](/assets/img/favicon%20browser%20tab.png)
+![Favicon](/assets/img/favicon-browser-tab.png)
 
 - The name of the site is located at the top of the page and it also acts as a link back to the home page.
 
@@ -136,10 +136,10 @@ In future implementations of this quiz I would like to:
 # Testing
 - ## HTML Validator
     At various stages HTML Validation was done.
-    ![HTML Validation](/assets/img/index%20html%20validator.png)
+    ![HTML Validation](/assets/img/index-html-validator.png)
 - ## CSS Validator
     At various stages CSS Validation was done.
-    ![CSS Validation](/assets/img/css%20validator.png)
+    ![CSS Validation](/assets/img/css-validator.png)
 
 - ## JSHint
     At various stages JSHint validation was done.
@@ -148,8 +148,8 @@ In future implementations of this quiz I would like to:
 - ## Lighthouse
     At various stages Lighthouse testing was done.
 
-    ![Lighthouse](/assets/img/lighthouse%20desktop%20quiz.png)
-    ![Lighthouse](/assets/img/lighthouse%20mobile.png)
+    ![Lighthouse](/assets/img/lighthouse-desktop-quiz.png)
+    ![Lighthouse](/assets/img/lighthouse-mobile.png)
 
 - ## Solved Bugs
 
