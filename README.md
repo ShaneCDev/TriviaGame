@@ -131,7 +131,7 @@ In future implementations of this quiz I would like to:
 - [Github](https://github.com/) - To save and store the files for the site.
 - [Google Developer Tools](https://developer.chrome.com/docs/) - To troubleshoot and test features and solve issues with responsiveness.
 - [Open Trivia Database](https://opentdb.com/) - API used for the quiz.
-- [Am I Responsive](http://ami.responsivedesign.is/)
+- [Am I Responsive](http://ami.responsivedesign.is/) - Used to show the website on a range of devices.
 
 # Testing
 - ## HTML Validator
