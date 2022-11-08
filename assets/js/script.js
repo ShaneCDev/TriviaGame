@@ -48,11 +48,14 @@ window.onload = () => {
 //API call function
 async function getTrivia() {
     const response = await fetch(address);
-    data = await response.json();
-
-    getTriviaQuestion(data);
-    populateBtnAnswers(data);
-    timer();
+    if (response.status >= 200 && response.status <= 299) {
+        data = await response.json();
+        getTriviaQuestion(data);
+        populateBtnAnswers(data);
+        timer();
+    } else {
+        window.location.assign("500.html");
+    }
 }
 
 function getTriviaQuestion(data) {

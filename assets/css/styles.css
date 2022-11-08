@@ -39,6 +39,11 @@ h2 {
     margin-bottom: 15px;
 }
 
+.sorry {
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
 a {
     text-decoration: none;
 }
@@ -47,6 +52,12 @@ p {
     text-align: center;
     font-size: 0.75rem;
     padding-top: .75rem;
+}
+
+.error {
+    font-family: var(--content-text);
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .flex {
