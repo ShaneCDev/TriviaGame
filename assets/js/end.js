@@ -38,14 +38,15 @@ function saveHighScore(e) {
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
 
-    alert('Score Saved, go back to the homepage and see where you placed on the leaderboard!');
+    alert('Score Saved! Go back to the homepage and see where you placed on the leaderboard!');
 }
 
-
+// Makes it so user can't click "Save Score" button until some value is entered
 username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value;
 });
 
+// Ran when "Save Score" button is clicked and disables the button also to prevent the user clicking it over and over
 saveScoreBtn.addEventListener('click', function (e) {
     saveHighScore(e);
     saveScoreBtn.disabled = true;

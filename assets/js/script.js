@@ -58,10 +58,12 @@ async function getTrivia() {
     }
 }
 
+// Gets the first question of the quiz
 function getTriviaQuestion(data) {
     question.innerHTML = data.results[currentQuestionIndex].question;
 }
 
+// Populate the 4 answer buttons function - gets the api data and displays them to the user across 4 buttons
 function populateBtnAnswers(data) {
     const results = data.results[currentQuestionIndex];
     const answers = [...results.incorrect_answers, results.correct_answer]; //takes correct answer and incorrect answers and makes them one array
@@ -75,6 +77,7 @@ function populateBtnAnswers(data) {
     }
 }
 
+// Next question function -  this is ran when user clicks "next question" button after selecting an answer
 function getNextQuestion() {
     currentQuestionIndex++;
     acceptingAns = true;
@@ -105,6 +108,7 @@ function clearStatusClass(element) {
     });
 }
 
+//Check Answer function - checks answer when one of the answers is selected
 function checkAnswer(btn) {
     let correctAns = data.results[currentQuestionIndex].correct_answer;
     let userAnswer = btn.value;
@@ -119,6 +123,7 @@ function checkAnswer(btn) {
     acceptingAns = false;
 }
 
+// Increment score function - everytime user gets answers a question correctly their score is incremented by 1
 function incrementScore() {
     let scoreCounter = document.getElementById('score');
     scoreCounter.innerHTML = ++score;
@@ -135,11 +140,16 @@ function fisherYatesShuffle(array) {
     }
 }
 
+//Timer function - timer set at 2 minutes
 function timer() {
     let seconds = 120;
     let timer = setInterval(function() {
         document.getElementById('timer').innerHTML = seconds;
         seconds--;
+        /*
+        if user runs out of time set their score in local storage and send them to end.html to enter
+        a username and save their score to the leaderboard
+        */
         if (seconds < 0) {
             localStorage.setItem("mostRecentScore", score);
             clearInterval(timer);
