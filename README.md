@@ -160,6 +160,9 @@ In future implementations of this quiz I would like to:
 | 3 | When playing the quiz I have a 'Question No:' counter that should show the relative Question number and when you click the 'Next Question' button that question number increments by 1. But when I got to the last question it was stuck at 9/10 instead of 10/10. | I added a currentQuestionIndex variable and added an if statement which said if currentQuestionIndex = 10 the 'Question No: 10/10'
 | 4 | When adding score to the leaderboard if you played the quiz again and used the same username it was adding multiple entries to the leaderboard with the same username instead of updating the score of said user. | I looped through local storage and withing the loop I have an if statement that checks if the username in local storage is equal to the username just entered and whether the local storage score is less than the users most recent score and if it is then I update the record using localStorage.setItem()
 
+- ## Known Bugs
+To the best of my knowledge there are no known bugs but I am sure others will find some. During my testing all bugs I encountered I fixed and are documented above, so as of right now the project is bug free. If any bugs are found feel free to let me know and I will get around to fixing them.
+
 - ## Browser Compatability
 The website was tested on the following browsers:
 - Google Chrome: Version 105.0.5195.127 (Official Build) (64-bit)
